@@ -14,7 +14,7 @@ public class Main {
         gr_1.addSubject(match);
         gr_1.addSubject(history);
         gr_1.addSubject(language);
-        Group gr_2 = new Group("8Б", 140);
+        Group gr_2 = new Group();
         match.setCountHours(50);
         gr_2.addSubject(match);
         history.setCountHours(40);
