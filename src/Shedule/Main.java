@@ -17,5 +17,6 @@ public class Main {
         Group gr_2 = new Group("8 B", 300, 5);
         Group gr_3 = new Group("9A", 200, 4);
         Group gr_4 = new Group("6G", 150, 9);
+
     }
 }
