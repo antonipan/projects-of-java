@@ -22,6 +22,7 @@ public class Main {
         history.setCountHours(50);
         gr_2.addSubject(language);
         gr_1.getAllCurriculum();
-
+        Group gr_3 = new Group("9A", 200, 4);
+        gr_3.addSubject(history.setCountHours(100););
     }
 }
