@@ -7,6 +7,12 @@ public class Main {
         Computer comp = new Computer();
         comp.setRam(33);
         comp.setName("Vendetta");
-        System.out.println(comp.getName());
+        Computer comp2 = new Computer();
+        System.out.println(comp2.getName());
+        comp2.on();
+        comp2.load();
+        comp2.off();
+        System.out.println(comp.getHdd());
+
     }
 }

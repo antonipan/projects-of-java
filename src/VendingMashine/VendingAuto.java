@@ -4,17 +4,28 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class VendingAuto {
+public abstract class VendingAuto {
     private List <Product> list;
     private int maxCell;
     private int cell;
+    private double cassa;
 
-
+// создание машины с заданным количеством ячеек
     public VendingAuto (int maxCell) {
-        this.maxCell = maxCell;
-        this.list = new LinkedList<>();
-        this.cell = 0;
+            this.maxCell = maxCell;
+            this.list = new LinkedList<>();
+            this.cell = 0;
     }
+
+
+    public double getCassa () {
+        return cassa;
+    }
+
+    public void setCassa(double cassa) {
+        this.cassa = cassa;
+    }
+
     /* добавление продукта */
     public void addProductToVending (Product product) {
         if (cell < maxCell) {
@@ -22,6 +33,15 @@ public class VendingAuto {
             list.add(product);
         } else {
             System.out.println("the vending machine is full");
+        }
+    }
+    /*изъятие продукта из машины*/
+    public void removeProductVending (Product product) {
+        if (cell > 0) {
+            cell--;
+            list.remove(product);
+        } else {
+            System.out.println("the vending machine is empty");
         }
     }
     // получить количество свободных позиций
@@ -68,6 +88,7 @@ public class VendingAuto {
         }
         System.out.println("Ваши средства " + cuper);
     }
+// показывает список продуктов в машине.
     @Override
     public String toString() {
         String lis = list.toString();
