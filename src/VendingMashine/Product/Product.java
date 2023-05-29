@@ -1,12 +1,14 @@
-package VendingMashine;
+package VendingMashine.Product;
 
 public class Product {
     private String name;
     private double cost;
+    private double costOfBuyer;
 
     public Product (String name, double cost) {
         this.name = name;
         this.cost = cost;
+        this.costOfBuyer = cost;
     }
 
     public Product (String name) {
@@ -19,6 +21,14 @@ public class Product {
 
     public double getCost () {
         return cost;
+    }
+
+    public double getCostOfBuyer() {
+        return costOfBuyer;
+    }
+
+    public void setCostOfBuyer(double costOfBuyer) {
+        this.costOfBuyer = costOfBuyer;
     }
 
     @Override

@@ -1,4 +1,6 @@
-package VendingMashine;
+package VendingMashine.Person;
+
+import VendingMashine.Vending.VendingAuto;
 
 import java.util.Random;
 

@@ -1,10 +1,12 @@
-package VendingMashine;
+package VendingMashine.Vending;
+
+import VendingMashine.Product.Product;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class VendingAuto {
+public class VendingAuto {
     private List <Product> list;
     private int maxCell;
     private int cell;
@@ -15,21 +17,23 @@ public abstract class VendingAuto {
             this.maxCell = maxCell;
             this.list = new LinkedList<>();
             this.cell = 0;
+            this.cassa = 0;
     }
-
-
     public double getCassa () {
         return cassa;
     }
-
+    public List <Product> getList () {
+        return this.list;
+    }
     public void setCassa(double cassa) {
         this.cassa = cassa;
     }
 
     /* добавление продукта */
-    public void addProductToVending (Product product) {
+    public void addProductToVending (Product product, double costOfshopping) {
         if (cell < maxCell) {
             cell++;
+            product.setCostOfBuyer(costOfshopping);
             list.add(product);
         } else {
             System.out.println("the vending machine is full");
@@ -48,7 +52,13 @@ public abstract class VendingAuto {
     public void getFreeCell () {
         System.out.println ("Free cell is: " + (maxCell - cell));
     }
-
+    // показать все продукты в машине
+    public void getAllProducts () {
+        for (Product product : list
+             ) {
+            System.out.println("product - " + product.getName() + " : " + product.getCost());
+        }
+    }
     // считает стоиость всех продуктов в автомате
     public void getCostAllProduct () {
         double summ = 0;

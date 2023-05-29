@@ -1,12 +1,16 @@
 package VendingMashine;
 
 
+import VendingMashine.Person.Owner;
+import VendingMashine.Person.Person;
+import VendingMashine.Vending.VendingAuto;
+
 public class Program {
 
     public static void main(String[] args) {
-        Person buyer1 = new Buyer("Oliver", 1000);
-        Person owner1 = new Owner("Gosha", 11000);
-//        VendingAuto venum = new VendingAuto(30);
+        Owner owner1 = new Owner("Jon", 1000);
+        VendingAuto vend = new VendingAuto(10);
+
 
     }
 }
